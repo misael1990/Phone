@@ -1,0 +1,9 @@
+ [data-role=listview].jobber-checkbox-list a.ui-link-inherit {
+    padding: 0 .7em 0 0;
+  }
+  [data-role=listview].jobber-checkbox-list label {
+    border: none; margin: 0;
+  }
+  [data-role=listview].jobber-checkbox-list .ui-li-aside {
+    width: 20%;
+  }

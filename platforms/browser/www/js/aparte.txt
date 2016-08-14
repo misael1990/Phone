@@ -1,0 +1,40 @@
+	 /*
+	if(checkSelect()==1){
+		alert(getIdSelect());
+	}
+	else{
+		*/
+		var text = $("#Memo").val();
+		var title = $("#Title").val();
+		var key = $("#key_user").val();
+		var fecha = $("#picker").val();
+		
+		
+		var year = fecha.substring(0, 4);
+		var month= fecha.substring(5,7);
+		var day= fecha.substring(8,10);
+
+		var res=day+'/'+month+'/'+year;
+		if(existDate(res)){
+			if(!validateMinorDate(res)){
+				if (text != '' && title !='' ) {
+					// Save to local storage
+					addMemo(text, title, key,fecha);
+					$("#Memo").val("");
+					$("#Title").val("");
+					document.getElementById("picker").valueAsDate = new Date();
+					$.mobile.changePage("#TopPage", { reverse: true });
+				}
+				else{
+					alert("Enter a title and note please");
+				}
+				
+			}
+			else{
+				alert("Enter a greater date");
+			}
+		}
+		else{
+			alert("Select a validate date");
+		}
+	//}
